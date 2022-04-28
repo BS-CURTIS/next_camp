@@ -87,7 +87,6 @@ export const PostText = styled.div`
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--text2);
   }
 `;
 

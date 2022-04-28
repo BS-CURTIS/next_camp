@@ -1,67 +1,17 @@
-import React, { useContext } from "react";
+import React from "react";
 import { GetStaticProps } from "next";
-import {
-  PostUl,
-  PostLi,
-  PostText,
-  PostImage,
-  Contatiner,
-} from "../component/styles/styled";
-import Image from "next/image";
-import { node, body } from "../interface/common";
-import { ThemeContext } from "./_app";
+import { Contatiner } from "../component/styles/styled";
+import { body } from "../interface/common";
+
 import axios from "axios";
-import NoImage from "../public/no_image.png";
+import IndexContent from "../component/contents/indexContent";
 
 const Index = ({ body }: body) => {
-  const { theme } = useContext(ThemeContext);
   const { items } = body;
 
   return (
     <Contatiner>
-      <PostUl>
-        {items.item.map((site: node) => (
-          <PostLi key={site.contentId} theme={theme}>
-            <PostImage>
-              {site.firstImageUrl ? (
-                <Image
-                  src={site.firstImageUrl}
-                  width={256}
-                  height={170}
-                  alt={site.facltNm}
-                />
-              ) : (
-                <Image
-                  src={NoImage}
-                  width={256}
-                  height={170}
-                  alt={site.facltNm}
-                />
-              )}
-            </PostImage>
-            <PostText>{site.facltNm}</PostText>
-            <PostText>{site.addr1}주소</PostText>
-            <PostText>{site.addr2}주소</PostText>
-            <PostText>{site.resveCl}예약여부</PostText>
-            <PostText>{site.resveUrl}예약주소</PostText>
-            <PostText>{site.sitedStnc}사이트간격</PostText>
-            <PostText>{site.siteMg1Width}가로크기</PostText>
-            <PostText>{site.siteMg2Width}가로크기</PostText>
-            <PostText>{site.siteMg3Width}가로크기</PostText>
-            <PostText>{site.siteMg1Vrticl}세로크기</PostText>
-            <PostText>{site.siteMg2Vrticl}세로크기</PostText>
-            <PostText>{site.siteMg3Vrticl}세로크기</PostText>
-            <PostText>{site.siteMg1Co}수량</PostText>
-            <PostText>{site.siteMg2Co}수량</PostText>
-            <PostText>{site.siteMg3Co}수량</PostText>
-            <PostText>{site.siteBottomCl1}잔디</PostText>
-            <PostText>{site.siteBottomCl2}파쇄</PostText>
-            <PostText>{site.siteBottomCl3}데크</PostText>
-            <PostText>{site.siteBottomCl4}자갈</PostText>
-            <PostText>{site.siteBottomCl5}맨흙</PostText>
-          </PostLi>
-        ))}
-      </PostUl>
+      <IndexContent body={items} />
     </Contatiner>
   );
 };
