@@ -8,10 +8,10 @@ const DarkModeToggle = () => {
 
   return (
     <ModeBox theme={theme} onChange={toggleTheme}>
-          <input type="checkbox" id="checkbox" value={inputValue || ""} {theme === lightTheme ? '' : ''} />
-          <label htmlFor="checkbox">
-            <span></span>
-          </label>
+      <input type="checkbox" id="checkbox" value={inputValue || ""} />
+      <label htmlFor="checkbox">
+        <span></span>
+      </label>
     </ModeBox>
   );
 };

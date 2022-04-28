@@ -2,9 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["jsonplaceholder.typicode.com", "via.placeholder.com"],
+    domains: ["gocamping.or.kr"],
   },
-  optimizeFonts: false,
 };
 
 module.exports = nextConfig;
